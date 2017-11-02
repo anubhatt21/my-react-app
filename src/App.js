@@ -7,7 +7,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      introText: 'I came from a state!'
+      introText: 'I came from a state!',
+      clickCount: 0
     }
   }
 
@@ -24,8 +25,11 @@ class App extends Component {
     );
   }
   onClick() {
-    this.setState ({ introText: 'I clicked the button!'} )
-}
+    this.setState ({
+      clickCount: this.state.clickCount + 1,
+      introText: 'I clicked the button! ' + this.state.clickCount + ' times '
+    })
+  }
 }
 
 export default App;
